@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <title>Sai YouTube</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Boys Sai Kiran | Cyber Security Enthusiast</title>
   <style>
     * {
       margin: 0;
@@ -11,148 +11,229 @@
       box-sizing: border-box;
     }
 
-    html, body {
-      height: 100%;
-      width: 100%;
-      overflow: hidden;
-    }
-
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
+      background: linear-gradient(135deg, #6b48ff 0%, #ff6ec7 100%);
+      color: #fff;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
 
     .container {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
     }
 
-    .glass-header {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      padding: 14px 20px;
-      background: rgba(255, 255, 255, 0.10);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-      z-index: 10;
+    /* Glassmorphism card */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 24px;
+      padding: 32px;
+      margin: 20px 0;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .glass-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    header {
       text-align: center;
-      font-size: 1.5rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      opacity: 0;
-      transform: translateY(-20px);
-      animation: fadeInDown 1s ease-out forwards;
+      padding: 80px 20px 40px;
     }
 
-    .video-container {
-      flex: 1;
+    h1 {
+      font-size: 3.2rem;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+      text-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    .tagline {
+      font-size: 1.3rem;
+      opacity: 0.9;
+      margin-bottom: 30px;
+    }
+
+    section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 24px;
+      color: #fff;
+      text-align: center;
       position: relative;
-      width: 100%;
-      height: 100%;
-      background: #000;
     }
 
-    .video-wrapper {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      transform: scale(0.98);
-      animation: popIn 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s forwards;
-    }
-
-    .video-wrapper iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
+    section h2::after {
+      content: '';
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #ff6ec7, #6b48ff);
       display: block;
+      margin: 12px auto 0;
+      border-radius: 2px;
     }
 
-    /* Subtle breathing glow */
-    .glow {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 50% 50%, rgba(100,200,255,0.12), transparent 60%);
-      opacity: 0.7;
-      animation: breathe 14s ease-in-out infinite alternate;
-      pointer-events: none;
-      z-index: -1;
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      text-align: center;
     }
 
-    @keyframes fadeInDown {
-      to { opacity: 1; transform: translateY(0); }
+    .skill-item {
+      background: rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 20px;
+      transition: all 0.4s ease;
     }
 
-    @keyframes popIn {
-      to { opacity: 1; transform: scale(1); }
+    .skill-item:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 12px 40px rgba(107, 72, 255, 0.4);
+      background: rgba(255,255,255,0.12);
     }
 
-    @keyframes breathe {
-      0%   { transform: scale(1); opacity: 0.6; }
-      100% { transform: scale(1.08); opacity: 0.85; }
+    .skill-item h3 {
+      margin-top: 12px;
+      font-size: 1.2rem;
     }
 
-    /* Mobile: true full-screen, no rounding */
+    .contact-info {
+      text-align: center;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .contact-info a {
+      color: #ff6ec7;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .contact-info a:hover {
+      color: #fff;
+      text-shadow: 0 0 10px #ff6ec7;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.95rem;
+      opacity: 0.8;
+    }
+
+    /* Animation on scroll */
+    @media (prefers-reduced-motion: no-preference) {
+      .glass-card {
+        transition: all 1s ease;
+      }
+    }
+
     @media (max-width: 768px) {
-      .glass-header {
-        font-size: 1.3rem;
-        padding: 12px 16px;
-      }
-      .video-wrapper {
-        border-radius: 0;
-      }
-    }
-
-    /* Larger screens: slight polish */
-    @media (min-width: 769px) {
-      .container {
-        padding: 20px;
-      }
-      .video-wrapper {
-        max-width: 95vw;
-        max-height: 85vh;
-        margin: auto;
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-        border: 1px solid rgba(255,255,255,0.1);
-      }
+      h1 { font-size: 2.6rem; }
+      .glass-card { padding: 24px; }
     }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <div class="glow"></div>
+    <header>
+      <h1>Boys Sai Kiran</h1>
+      <p class="tagline">Cyber Security Enthusiast | Ethical Hacker</p>
+    </header>
 
-    <div class="glass-header">Sai YouTube</div>
-
-    <div class="video-container">
-      <div class="video-wrapper">
-        <!-- 
-          This is now using @Prasadtechintelugu's real uploads playlist.
-          It shows all videos from the channel (Videos tab).
-          If you want a specific playlist or single video, change accordingly.
-        -->
-        <iframe 
-          src="https://www.youtube-nocookie.com/embed/videoseries?list=UUb-xXZ7ltTvrh9C6DgB9H-Q&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&autoplay=0"
-          title="Prasad Tech in Telugu - Sai YouTube"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          referrerpolicy="strict-origin-when-cross-origin"
-          loading="lazy">
-        </iframe>
-      </div>
+    <div class="glass-card" id="about">
+      <section>
+        <h2>About Me</h2>
+        <p style="font-size: 1.1rem; line-height: 1.7; opacity: 0.95;">
+          Passionate Cyber Security student at Annamacharya University, specializing in Ethical Hacking and penetration testing. 
+          I love exploring vulnerabilities, securing systems, and learning the latest tools & techniques in cybersecurity. 
+          Always eager to contribute to a safer digital world.
+        </p>
+      </section>
     </div>
+
+    <div class="glass-card" id="skills">
+      <section>
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <h3>Ethical Hacking</h3>
+          </div>
+          <div class="skill-item">
+            <h3>Penetration Testing</h3>
+          </div>
+          <div class="skill-item">
+            <h3>Network Security</h3>
+          </div>
+          <div class="skill-item">
+            <h3>Vulnerability Assessment</h3>
+          </div>
+          <div class="skill-item">
+            <h3>Kali Linux</h3>
+          </div>
+          <div class="skill-item">
+            <h3>Web Application Security</h3>
+          </div>
+          <div class="skill-item">
+            <h3>CTF Challenges</h3>
+          </div>
+          <div class="skill-item">
+            <h3>Python Scripting</h3>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="glass-card" id="education">
+      <section>
+        <h2>Education</h2>
+        <p style="font-size: 1.2rem; text-align: center; line-height: 1.6;">
+          <strong>Annamacharya University</strong><br>
+          B.Tech in Cyber Security<br>
+          Currently Pursuing
+        </p>
+      </section>
+    </div>
+
+    <div class="glass-card" id="contact">
+      <section>
+        <h2>Contact Me</h2>
+        <div class="contact-info">
+          <p>Email: <a href="mailto:saikiransaid@gmail.com">saikiransaid@gmail.com</a></p>
+          <p>Let's connect to discuss cybersecurity, ethical hacking projects, or collaborations!</p>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      © 2026 Boys Sai Kiran | Made with passion for Cyber Security
+    </footer>
   </div>
+
+  <script>
+    // Simple scroll animation reveal
+    const cards = document.querySelectorAll('.glass-card');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    cards.forEach(card => observer.observe(card));
+  </script>
 
 </body>
 </html>
