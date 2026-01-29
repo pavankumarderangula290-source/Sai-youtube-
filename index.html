@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
   <title>Sai YouTube</title>
   <style>
     * {
@@ -11,23 +11,24 @@
       box-sizing: border-box;
     }
 
+    html, body {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      min-height: 100vh;
       color: white;
-      overflow: hidden;
     }
 
     .container {
       position: relative;
-      width: 100vw;
+      width: 100%;
       height: 100vh;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
     }
 
     .glass-header {
@@ -35,77 +36,95 @@
       top: 0;
       left: 0;
       right: 0;
-      padding: 16px 24px;
-      background: rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 14px 20px;
+      background: rgba(255, 255, 255, 0.10);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
       z-index: 10;
       text-align: center;
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       font-weight: 600;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
       opacity: 0;
-      transform: translateY(-30px);
-      animation: fadeInDown 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+      transform: translateY(-20px);
+      animation: fadeInDown 1s ease-out forwards;
+    }
+
+    .video-container {
+      flex: 1;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: #000;
     }
 
     .video-wrapper {
-      position: relative;
+      position: absolute;
+      inset: 0;
       width: 100%;
-      max-width: 1280px;
-      aspect-ratio: 16 / 9;
-      border-radius: 28px;
-      overflow: hidden;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.5);
-      background: rgba(0,0,0,0.4);
+      height: 100%;
       opacity: 0;
-      transform: scale(0.92);
-      animation: popIn 1.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s forwards;
-      border: 1px solid rgba(255,255,255,0.15);
+      transform: scale(0.98);
+      animation: popIn 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s forwards;
     }
 
     .video-wrapper iframe {
-      position: absolute;
-      top: 0; left: 0;
       width: 100%;
       height: 100%;
       border: none;
+      display: block;
     }
 
-    /* Subtle breathing background glow */
+    /* Subtle breathing glow */
     .glow {
       position: absolute;
-      inset: -20%;
-      background: radial-gradient(circle at 30% 70%, rgba(100,200,255,0.18), transparent 40%);
-      opacity: 0.6;
-      animation: breathe 12s ease-in-out infinite alternate;
+      inset: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(100,200,255,0.12), transparent 60%);
+      opacity: 0.7;
+      animation: breathe 14s ease-in-out infinite alternate;
       pointer-events: none;
       z-index: -1;
     }
 
     @keyframes fadeInDown {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes popIn {
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
+      to { opacity: 1; transform: scale(1); }
     }
 
     @keyframes breathe {
-      0%   { transform: scale(1.0); opacity: 0.5; }
-      100% { transform: scale(1.15); opacity: 0.8; }
+      0%   { transform: scale(1); opacity: 0.6; }
+      100% { transform: scale(1.08); opacity: 0.85; }
     }
 
+    /* Mobile: true full-screen, no rounding */
     @media (max-width: 768px) {
-      .glass-header { font-size: 1.4rem; padding: 14px; }
-      .video-wrapper { border-radius: 20px; }
+      .glass-header {
+        font-size: 1.3rem;
+        padding: 12px 16px;
+      }
+      .video-wrapper {
+        border-radius: 0;
+      }
+    }
+
+    /* Larger screens: slight polish */
+    @media (min-width: 769px) {
+      .container {
+        padding: 20px;
+      }
+      .video-wrapper {
+        max-width: 95vw;
+        max-height: 85vh;
+        margin: auto;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+        border: 1px solid rgba(255,255,255,0.1);
+      }
     }
   </style>
 </head>
@@ -116,24 +135,22 @@
 
     <div class="glass-header">Sai YouTube</div>
 
-    <div class="video-wrapper">
-      <!-- 
-        IMPORTANT: Replace with YOUR real channel's uploads playlist ID.
-        1. Go to your YouTube channel page (e.g., https://www.youtube.com/@yourhandle)
-        2. Click "Videos" tab → right-click "Play all" button → Copy link
-        3. The link will have ?list=UUxxxxxxxxxxxxxxxxxxxxxx → copy that UU... part
-        OR: Your channel ID is UCxxxxxxxxxxxxxxxxxxxxxx → change UC to UU for uploads playlist.
-
-        Example for a real channel (replace with yours to fix "unavailable" error):
-        src="https://www.youtube-nocookie.com/embed/videoseries?list=UUl5j7BxqQwZV85i71vbvJIQ"
-      -->
-      <iframe 
-        src="https://www.youtube-nocookie.com/embed/videoseries?list=UUxxxxxxxxxxxxxxxxxxxxxx"
-        title="Sai YouTube Channel"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
-        referrerpolicy="strict-origin-when-cross-origin">
-      </iframe>
+    <div class="video-container">
+      <div class="video-wrapper">
+        <!-- 
+          This is now using @Prasadtechintelugu's real uploads playlist.
+          It shows all videos from the channel (Videos tab).
+          If you want a specific playlist or single video, change accordingly.
+        -->
+        <iframe 
+          src="https://www.youtube-nocookie.com/embed/videoseries?list=UUb-xXZ7ltTvrh9C6DgB9H-Q&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&autoplay=0"
+          title="Prasad Tech in Telugu - Sai YouTube"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          referrerpolicy="strict-origin-when-cross-origin"
+          loading="lazy">
+        </iframe>
+      </div>
     </div>
   </div>
 
