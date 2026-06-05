@@ -4,171 +4,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Saanvi International School - Premium CBSE Education in Rajampet, Andhra Pradesh">
-    <title>Saanvi International School | Knowledge is Soul</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap">
+    <title>Saanvi International School | Premium Creative Portal</title>
+    <meta name="description" content="Welcome to Saanvi International School, Rajampet. Managed by Sri Annamaiah Vidyaniketan Society. CBSE Affiliation No: 130464. Knowledge is soul.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
 </head>
 <body>
-    <!-- Preloader -->
-    <div id="preloader" class="preloader">
+
+    <div id="preloader">
         <div class="preloader-content">
-            <div class="logo-spinner"></div>
-            <h1 class="preloader-title">Saanvi International School</h1>
+            <h2 class="preloader-logo">SAANVI</h2>
+            <div class="preloader-bar"><div class="preloader-progress"></div></div>
+            <p class="preloader-subtitle">Knowledge is soul</p>
         </div>
     </div>
 
-    <!-- Navigation -->
-    <nav class="navbar glass">
+    <canvas id="webgl-bg"></canvas>
+
+    <header class="navbar">
         <div class="nav-container">
-            <div class="logo">
-                <span class="logo-text">SAANVI</span>
+            <div class="brand">
+                <span class="main-title">SAANVI</span>
+                <span class="sub-title">INTERNATIONAL SCHOOL</span>
             </div>
-            <ul class="nav-links">
-                <li><a href="#vision">Vision</a></li>
-                <li><a href="#leadership">Leadership</a></li>
-                <li><a href="#academics">Academics</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="nav-cta" onclick="window.location.href='tel:9963657658'">Admissions</button>
+            <div class="cbse-tag">CBSE Affiliation No: 130464</div>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero -->
-    <section id="hero" class="hero">
-        <canvas id="bg-canvas"></canvas>
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 id="hero-title" class="hero-main-title">Saanvi International School</h1>
-                <p class="hero-subtitle">Knowledge is Soul</p>
-                <div class="hero-meta">
-                    <span>Est. 2015 • CBSE Affl. 130464</span>
+    <main class="content-wrapper">
+        
+        <section class="hero-section" id="hero">
+            <div class="hero-container">
+                <p class="hero-motto">ESTD 2015 &bull; "KNOWLEDGE IS SOUL"</p>
+                <h1 class="hero-title" id="split-title">Saanvi International School</h1>
+                <p class="hero-tagline">Managed by Sri Annamaiah Vidyaniketan Society. Cultivating intellectual brilliance and deep moral foundations within a world-class environment.</p>
+                <div class="hero-scroll-indicator">
+                    <span class="mouse-icon"><span class="wheel"></span></span>
+                    <span>Scroll to Explore</span>
                 </div>
-                <button class="cta-button glass" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">
-                    Explore Admissions
-                </button>
             </div>
-        </div>
-        <div class="scroll-indicator">
-            <span>Scroll to Discover</span>
-            <div class="scroll-line"></div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Vision & Pillars -->
-    <section id="vision" class="section vision-section">
-        <div class="container">
+        <section class="vision-pillars" id="vision">
             <div class="section-header">
-                <h2 class="section-title">Our Vision</h2>
-                <p class="section-subtitle">To infuse the quest for learning in every student as well as inculcate high moral values.</p>
+                <span class="section-tag">OUR CORE FOUNDATION</span>
+                <h2 class="section-title">Vision & Academic Pillars</h2>
             </div>
+            
+            <div class="vision-statement glass-card">
+                <h3>The Vision Statement</h3>
+                <p>"To infuse the quest for learning in every student as well as inculcate high moral values. We are committed to continuous and comprehensive development of each student."</p>
+            </div>
+
             <div class="pillars-grid">
-                <div class="pillar-card glass">
-                    <div class="pillar-icon">📚</div>
-                    <h3>Academic Excellence</h3>
-                    <p>100% senior faculty with Master's Degrees. Curriculum designed for competitive exams.</p>
+                <div class="pillar-item glass-card animate-pillar">
+                    <div class="pillar-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h4>Expert Faculty</h4>
+                    <p>100% of our senior academic faculty hold master's degrees, delivering comprehensive, university-level instructional foundations.</p>
                 </div>
-                <div class="pillar-card glass">
-                    <div class="pillar-icon">🏛️</div>
-                    <h3>Holistic Development</h3>
-                    <p>Smartboards, advanced labs, sports zones for comprehensive growth.</p>
+                <div class="pillar-item glass-card animate-pillar">
+                    <div class="pillar-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <h4>Competitive Focus</h4>
+                    <p>Curriculum specialized structurally from early development to actively prepare students for complex national & international competitive examinations.</p>
                 </div>
-                <div class="pillar-card glass">
-                    <div class="pillar-icon">🌟</div>
-                    <h3>Moral Values</h3>
-                    <p>Committed to character building and ethical education.</p>
+                <div class="pillar-item glass-card animate-pillar">
+                    <div class="pillar-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                    </div>
+                    <h4>Comprehensive Continuum</h4>
+                    <p>Co-educational Day School structure offering an interconnected academic journey seamlessly from Nursery up to Class 12.</p>
+                </div>
+                <div class="pillar-item glass-card animate-pillar">
+                    <div class="pillar-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <h4>Infrastructure Matrix</h4>
+                    <p>Interactive software smartboards, advanced digital science and computer laboratories, and professional-grade dedicated sports fitness zones.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Leadership -->
-    <section id="leadership" class="section leadership-section">
-        <div class="container">
+        <section class="leadership-section" id="leadership">
             <div class="section-header">
-                <h2 class="section-title">Leadership</h2>
+                <span class="section-tag">GOVERNANCE METRICS</span>
+                <h2 class="section-title">Executive Leadership</h2>
             </div>
+
             <div class="leadership-grid">
-                <!-- Card 1 -->
-                <div class="leader-card glass" data-leader="1">
-                    <div class="leader-image">
+                <div class="leadership-card glass-card animate-card">
+                    <div class="card-image-wrapper">
                         <img src="assets/27002.jpg" alt="Mr. Konduru Sarath Kumar Raju" loading="lazy">
                     </div>
-                    <div class="leader-info">
-                        <h3>Mr. Konduru Sarath Kumar Raju</h3>
-                        <p class="role">Chairman (M.A., B.L.)</p>
-                        <blockquote>"Education is the basis of all progress."</blockquote>
+                    <div class="card-info">
+                        <span class="card-role">CHAIRMAN</span>
+                        <h3 class="card-name">Mr. Konduru Sarath Kumar Raju <span class="credentials">(M.A., B.L.)</span></h3>
+                        <blockquote class="card-quote">"Education is the basis of all progress."</blockquote>
                     </div>
                 </div>
-                <!-- Card 2 -->
-                <div class="leader-card glass" data-leader="2">
-                    <div class="leader-image">
+
+                <div class="leadership-card glass-card animate-card">
+                    <div class="card-image-wrapper">
                         <img src="assets/27003.jpg" alt="Academic Administration Team" loading="lazy">
                     </div>
-                    <div class="leader-info">
-                        <h3>Academic Administration Team</h3>
-                        <p class="role">Academic Leadership</p>
-                        <blockquote>Expert, approachable, and personalized attention for every student.</blockquote>
+                    <div class="card-info">
+                        <span class="card-role">ADMINISTRATION</span>
+                        <h3 class="card-name">Academic Administration Team</h3>
+                        <blockquote class="card-quote">"Focusing on expert, approachable, and highly personalized student attention."</blockquote>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Academics -->
-    <section id="academics" class="section academics-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Academics</h2>
-            </div>
-            <div class="academics-content">
-                <div class="academics-grid">
-                    <div class="feature glass">
-                        <h4>Nursery to Class 12</h4>
-                        <p>Co-educational Day School</p>
-                    </div>
-                    <div class="feature glass">
-                        <h4>Advanced Facilities</h4>
-                        <p>Smartboards, Science &amp; Computer Labs</p>
-                    </div>
-                    <div class="feature glass">
-                        <h4>Sports &amp; Fitness</h4>
-                        <p>Dedicated zones for physical development</p>
-                    </div>
+        <footer class="site-footer">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>SAANVI</h3>
+                    <p>Managed by Sri Annamaiah Vidyaniketan Society</p>
+                    <p class="campus-size">3-Acre Premium Modern Campus Architecture</p>
                 </div>
-                <div class="campus-info">
-                    <p><strong>3-acre campus at Kadapa - Tirupati Road, Boyanapalli, Rajampet, Kadapa, Andhra Pradesh 516126</strong></p>
+                <div class="footer-address">
+                    <h4>CAMPUS LOCATION</h4>
+                    <p>Kadapa - Tirupati Road, Boyanapalli,</p>
+                    <p>Rajampet, Kadapa, Andhra Pradesh</p>
+                    <p>Zip Code: 516126</p>
+                </div>
+                <div class="footer-action">
+                    <h4>ADMISSIONS & INQUIRIES</h4>
+                    <a href="tel:9963657658" class="cta-glass-button">
+                        <span class="cta-glow-layer"></span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 10px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        Connect via 9963657658
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section contact-section">
-        <div class="container">
-            <div class="contact-content glass">
-                <h2>Get In Touch</h2>
-                <p>Saanvi International School (Managed by Sri Annamaiah Vidyaniketan Society)</p>
-                <a href="tel:9963657658" class="phone-cta">📞 9963657658</a>
-                <address>
-                    Kadapa - Tirupati Road,<br>
-                    Boyanapalli, Rajampet,<br>
-                    Kadapa, Andhra Pradesh 516126
-                </address>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Saanvi International School. All Rights Reserved. Hardware-Accelerated Kinetic Framework.</p>
             </div>
-        </div>
-    </section>
+        </footer>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Saanvi International School. All Rights Reserved.</p>
-        </div>
-    </footer>
+    </main>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
     <script src="app.js"></script>
 </body>
 </html>
