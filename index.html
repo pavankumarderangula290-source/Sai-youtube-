@@ -1,239 +1,174 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Boya Sai Kiran | Cyber Security Enthusiast</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: linear-gradient(135deg, #6b48ff 0%, #ff6ec7 100%);
-      color: #fff;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    /* Glassmorphism card */
-    .glass-card {
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 24px;
-      padding: 32px;
-      margin: 20px 0;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-
-    .glass-card.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    header {
-      text-align: center;
-      padding: 80px 20px 40px;
-    }
-
-    h1 {
-      font-size: 3.2rem;
-      margin-bottom: 12px;
-      letter-spacing: 1px;
-      text-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    }
-
-    .tagline {
-      font-size: 1.3rem;
-      opacity: 0.9;
-      margin-bottom: 30px;
-    }
-
-    section h2 {
-      font-size: 2.2rem;
-      margin-bottom: 24px;
-      color: #fff;
-      text-align: center;
-      position: relative;
-    }
-
-    section h2::after {
-      content: '';
-      width: 80px;
-      height: 4px;
-      background: linear-gradient(90deg, #ff6ec7, #6b48ff);
-      display: block;
-      margin: 12px auto 0;
-      border-radius: 2px;
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 20px;
-      text-align: center;
-    }
-
-    .skill-item {
-      background: rgba(255,255,255,0.06);
-      border-radius: 16px;
-      padding: 20px;
-      transition: all 0.4s ease;
-    }
-
-    .skill-item:hover {
-      transform: translateY(-10px) scale(1.05);
-      box-shadow: 0 12px 40px rgba(107, 72, 255, 0.4);
-      background: rgba(255,255,255,0.12);
-    }
-
-    .skill-item h3 {
-      margin-top: 12px;
-      font-size: 1.2rem;
-    }
-
-    .contact-info {
-      text-align: center;
-      font-size: 1.1rem;
-      line-height: 1.8;
-    }
-
-    .contact-info a {
-      color: #ff6ec7;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-
-    .contact-info a:hover {
-      color: #fff;
-      text-shadow: 0 0 10px #ff6ec7;
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      font-size: 0.95rem;
-      opacity: 0.8;
-    }
-
-    /* Animation on scroll */
-    @media (prefers-reduced-motion: no-preference) {
-      .glass-card {
-        transition: all 1s ease;
-      }
-    }
-
-    @media (max-width: 768px) {
-      h1 { font-size: 2.6rem; }
-      .glass-card { padding: 24px; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Saanvi International School - Premium CBSE Education in Rajampet, Andhra Pradesh">
+    <title>Saanvi International School | Knowledge is Soul</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
 </head>
 <body>
-
-  <div class="container">
-    <header>
-      <h1>Boys Sai Kiran</h1>
-      <p class="tagline">Cyber Security Enthusiast | Ethical Hacker</p>
-    </header>
-
-    <div class="glass-card" id="about">
-      <section>
-        <h2>About Me</h2>
-        <p style="font-size: 1.1rem; line-height: 1.7; opacity: 0.95;">
-          Passionate Cyber Security student at Annamacharya University, specializing in Ethical Hacking and penetration testing. 
-          I love exploring vulnerabilities, securing systems, and learning the latest tools & techniques in cybersecurity. 
-          Always eager to contribute to a safer digital world.
-        </p>
-      </section>
-    </div>
-
-    <div class="glass-card" id="skills">
-      <section>
-        <h2>Skills</h2>
-        <div class="skills-grid">
-          <div class="skill-item">
-            <h3>Ethical Hacking</h3>
-          </div>
-          <div class="skill-item">
-            <h3>Penetration Testing</h3>
-          </div>
-          <div class="skill-item">
-            <h3>Network Security</h3>
-          </div>
-          <div class="skill-item">
-            <h3>Vulnerability Assessment</h3>
-          </div>
-          <div class="skill-item">
-            <h3>Kali Linux</h3>
-          </div>
-          <div class="skill-item">
-            <h3>Web Application Security</h3>
-          </div>
-          <div class="skill-item">
-            <h3>CTF Challenges</h3>
-          </div>
-          <div class="skill-item">
-            <h3>Python Scripting</h3>
-          </div>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="logo-spinner"></div>
+            <h1 class="preloader-title">Saanvi International School</h1>
         </div>
-      </section>
     </div>
 
-    <div class="glass-card" id="education">
-      <section>
-        <h2>Education</h2>
-        <p style="font-size: 1.2rem; text-align: center; line-height: 1.6;">
-          <strong>Annamacharya University</strong><br>
-          B.Tech in Cyber Security<br>
-          Currently Pursuing
-        </p>
-      </section>
-    </div>
-
-    <div class="glass-card" id="contact">
-      <section>
-        <h2>Contact Me</h2>
-        <div class="contact-info">
-          <p>Email: <a href="mailto:saikiransaid@gmail.com">saikiransaid@gmail.com</a></p>
-          <p>Let's connect to discuss cybersecurity, ethical hacking projects, or collaborations!</p>
+    <!-- Navigation -->
+    <nav class="navbar glass">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">SAANVI</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#vision">Vision</a></li>
+                <li><a href="#leadership">Leadership</a></li>
+                <li><a href="#academics">Academics</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="nav-cta" onclick="window.location.href='tel:9963657658'">Admissions</button>
         </div>
-      </section>
-    </div>
+    </nav>
 
-    <footer>
-      © 2026 Boys Sai Kiran | Made with passion for Cyber Security
+    <!-- Hero -->
+    <section id="hero" class="hero">
+        <canvas id="bg-canvas"></canvas>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 id="hero-title" class="hero-main-title">Saanvi International School</h1>
+                <p class="hero-subtitle">Knowledge is Soul</p>
+                <div class="hero-meta">
+                    <span>Est. 2015 • CBSE Affl. 130464</span>
+                </div>
+                <button class="cta-button glass" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">
+                    Explore Admissions
+                </button>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll to Discover</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Vision & Pillars -->
+    <section id="vision" class="section vision-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Vision</h2>
+                <p class="section-subtitle">To infuse the quest for learning in every student as well as inculcate high moral values.</p>
+            </div>
+            <div class="pillars-grid">
+                <div class="pillar-card glass">
+                    <div class="pillar-icon">📚</div>
+                    <h3>Academic Excellence</h3>
+                    <p>100% senior faculty with Master's Degrees. Curriculum designed for competitive exams.</p>
+                </div>
+                <div class="pillar-card glass">
+                    <div class="pillar-icon">🏛️</div>
+                    <h3>Holistic Development</h3>
+                    <p>Smartboards, advanced labs, sports zones for comprehensive growth.</p>
+                </div>
+                <div class="pillar-card glass">
+                    <div class="pillar-icon">🌟</div>
+                    <h3>Moral Values</h3>
+                    <p>Committed to character building and ethical education.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership -->
+    <section id="leadership" class="section leadership-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Leadership</h2>
+            </div>
+            <div class="leadership-grid">
+                <!-- Card 1 -->
+                <div class="leader-card glass" data-leader="1">
+                    <div class="leader-image">
+                        <img src="assets/27002.jpg" alt="Mr. Konduru Sarath Kumar Raju" loading="lazy">
+                    </div>
+                    <div class="leader-info">
+                        <h3>Mr. Konduru Sarath Kumar Raju</h3>
+                        <p class="role">Chairman (M.A., B.L.)</p>
+                        <blockquote>"Education is the basis of all progress."</blockquote>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="leader-card glass" data-leader="2">
+                    <div class="leader-image">
+                        <img src="assets/27003.jpg" alt="Academic Administration Team" loading="lazy">
+                    </div>
+                    <div class="leader-info">
+                        <h3>Academic Administration Team</h3>
+                        <p class="role">Academic Leadership</p>
+                        <blockquote>Expert, approachable, and personalized attention for every student.</blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academics -->
+    <section id="academics" class="section academics-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Academics</h2>
+            </div>
+            <div class="academics-content">
+                <div class="academics-grid">
+                    <div class="feature glass">
+                        <h4>Nursery to Class 12</h4>
+                        <p>Co-educational Day School</p>
+                    </div>
+                    <div class="feature glass">
+                        <h4>Advanced Facilities</h4>
+                        <p>Smartboards, Science &amp; Computer Labs</p>
+                    </div>
+                    <div class="feature glass">
+                        <h4>Sports &amp; Fitness</h4>
+                        <p>Dedicated zones for physical development</p>
+                    </div>
+                </div>
+                <div class="campus-info">
+                    <p><strong>3-acre campus at Kadapa - Tirupati Road, Boyanapalli, Rajampet, Kadapa, Andhra Pradesh 516126</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="contact-content glass">
+                <h2>Get In Touch</h2>
+                <p>Saanvi International School (Managed by Sri Annamaiah Vidyaniketan Society)</p>
+                <a href="tel:9963657658" class="phone-cta">📞 9963657658</a>
+                <address>
+                    Kadapa - Tirupati Road,<br>
+                    Boyanapalli, Rajampet,<br>
+                    Kadapa, Andhra Pradesh 516126
+                </address>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Saanvi International School. All Rights Reserved.</p>
+        </div>
     </footer>
-  </div>
 
-  <script>
-    // Simple scroll animation reveal
-    const cards = document.querySelectorAll('.glass-card');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    cards.forEach(card => observer.observe(card));
-  </script>
-
+    <script src="app.js"></script>
 </body>
 </html>
